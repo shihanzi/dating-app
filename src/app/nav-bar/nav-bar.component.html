@@ -6,7 +6,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0" *ngIf="isLogged">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0" *ngIf="accountService.currentUser$ |async">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page">Matches</a>
         </li>
@@ -19,7 +19,7 @@
       </ul>
       <div class="btn-group" dropdown>
         <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
-                aria-controls="dropdown-basic"  *ngIf="isLogged">
+                aria-controls="dropdown-basic"  *ngIf="accountService.currentUser$ |async">
           Welcome <span class="caret"></span>
         </button>
         <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
@@ -30,7 +30,7 @@
           </li>
         </ul>
       </div>
-      <form *ngIf="!isLogged" #loginForm="ngForm" class="d-flex" (ngSubmit)="login()">
+      <form *ngIf="!(accountService.currentUser$ |async)" #loginForm="ngForm" class="d-flex" (ngSubmit)="login()">
         <input name="username" [(ngModel)]="model.username" class="form-control me-2" type="text" placeholder="Username"
           aria-label="Username">
         <input name="password" [(ngModel)]="model.password" class="form-control me-2" type="password"

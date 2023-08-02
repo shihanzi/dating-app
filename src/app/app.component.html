@@ -1,18 +1,6 @@
 <app-nav-bar></app-nav-bar>
 <div class="container">
-  <h2>{{ title }}</h2>
-  <table>
-    <thead>
-      <tr>
-        <th class="response-label">ID:</th>
-        <th class="response-label">Username:</th>
-      </tr>
-    </thead>
-    <tbody class="response-label" *ngFor="let user of users">
-        <td class="response-label">{{ user.id }}</td>
-        <td class="response-label">{{ user.userName }}</td>
-    </tbody>
-  </table>
+  <app-home></app-home>
 </div>
 
 
