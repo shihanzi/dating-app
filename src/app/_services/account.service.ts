@@ -2,11 +2,15 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, map } from 'rxjs';
 import { User } from '../_models/user';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AccountService {
+  canActivate(arg0: ToastrService, id: any): boolean | import("@angular/router").UrlTree | import("rxjs").Observable<boolean | import("@angular/router").UrlTree> | Promise<boolean | import("@angular/router").UrlTree> {
+    throw new Error('Method not implemented.');
+  }
 
   baseUrl = 'https://localhost:7119/api';
   private currentUserSource = new BehaviorSubject<User | null>(null);
