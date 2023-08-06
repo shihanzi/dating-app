@@ -13,8 +13,6 @@ import { ToastrService } from 'ngx-toastr';
 export class NavBarComponent {
 
   model: any = {}
-
-
   constructor(public accountService: AccountService,private router:Router,private toastr:ToastrService) { }
 
   ngOnInit(): void {
